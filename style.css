@@ -62,6 +62,36 @@ nav a:hover {
   text-decoration: underline;
 }
 
+/* =============================================================
+   LAYOUT MULTI-KOLOM
+   .container membungkus <article> dan <aside> lalu membaginya
+   jadi 2 kolom pakai CSS Grid: kolom kiri (article) 2 bagian,
+   kolom kanan (aside) 1 bagian -> grid-template-columns: 2fr 1fr
+   ============================================================= */
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  /* align-items: start supaya article & aside TIDAK dipaksa sama
+     tinggi (default grid adalah stretch). Kalau salah satu kolom
+     jauh lebih panjang isinya, kartu yang pendek tidak akan ikut
+     "molor" mengikuti kartu yang panjang. */
+  align-items: start;
+  gap: 20px;
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* article & aside dibuat seperti kartu (card) putih dengan bayangan
+   tipis, supaya pembagian 2 kolomnya terlihat jelas */
+article,
+aside {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 10px rgba(58, 34, 16, 0.12);
+}
+
 article h2,
 aside h3 {
   color: #ca762b;
@@ -83,6 +113,97 @@ article img {
   width: 100%;
   height: 320px;
   object-fit: cover;
+}
+
+/* =============================================================
+   KATEGORI PRODUK (grid 2 kolom)
+   Supaya menambah foto di tiap kategori TIDAK membuat aside
+   jadi kepanjangan, 6 kartu kategori disusun 2 kolom x 3 baris
+   (bukan 1 kolom x 6 baris seperti kartu info lainnya).
+   ============================================================= */
+.produk-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+/* Di dalam grid 2 kolom, jarak antar kartu sudah diatur oleh
+   "gap", jadi margin-bottom bawaan .info-box tidak diperlukan lagi */
+.produk-grid .info-box {
+  margin-bottom: 0;
+}
+
+.produk-grid .info-label {
+  font-size: 0.85rem;
+}
+
+.produk-grid .info-text {
+  font-size: 0.8rem;
+}
+
+/* ---------- Kotak info di aside: kategori produk & jam operasional ---------- */
+.info-box {
+  background: #fdf2e2;
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+}
+
+.info-label {
+  margin: 0 0 4px;
+  font-weight: bold;
+  color: #ca762b;
+}
+
+.info-text {
+  margin: 0;
+  color: #3a2210;
+}
+
+/* Foto kecil produk di tiap kartu kategori */
+.info-thumb {
+  width: 100%;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+/* ---------- Kotak Peta Lokasi ---------- */
+.lokasi-box {
+  margin-top: 20px;
+  background: #ffffff;
+  border: 1px solid #f2b475;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.lokasi-box h3 {
+  margin-top: 0;
+}
+
+.maps-link {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 6px 12px;
+  background: #c65605;
+  color: #fff8f0;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.maps-link:hover {
+  background: #ca762b;
+}
+
+.lokasi-box iframe {
+  display: block;
+  width: 100%;
+  height: 450px;
+  border-radius: 6px;
 }
 
 /* =============================================================
