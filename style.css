@@ -1,0 +1,97 @@
+/* =============================================================
+   Studi Kasus Perancangan Website Informasi Sederhana
+   pada UMKM Warung Pojok Mba Sofy
+
+   Mata Kuliah : Pemrograman Antarmuka Pengguna
+   Kelompok    : 9 (SI A)
+
+   Disusun oleh:
+   - Deio Castello Sujati       (825250002)
+   - Felicia Rivera             (825250003)
+   - Muhammad Ubait Dhaifullah  (825250012)
+   ============================================================= */
+
+/* box-sizing border-box supaya padding & border tidak menambah lebar elemen */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #3a2210;
+  /* Background halaman dibuat krem agar kartu article/aside berwarna
+     putih terlihat jelas menonjol di atasnya */
+  background: #f5e9d6;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* =============================================================
+   HEADER & NAV
+   Styling untuk tag semantik <header> dan <nav>: identitas
+   halaman dan menu navigasi.
+   ============================================================= */
+header {
+  padding: 30px;
+  text-align: center;
+  background: #c65605;
+  color: #fff8f0;
+}
+
+header h1 {
+  margin: 0 0 6px;
+}
+
+nav {
+  padding: 15px;
+  text-align: center;
+  background: #ca762b;
+}
+
+nav a {
+  color: #fff8f0;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+article h2,
+aside h3 {
+  color: #ca762b;
+  margin-top: 0;
+}
+
+/* Teks paragraf khusus di dalam article (Profil Usaha) dibuat rata
+   kanan-kiri. */
+article p {
+  text-align: justify;
+}
+
+article img {
+  border-radius: 6px;
+  margin-bottom: 12px;
+  /* Foto tampak depan dibuat landscape & tidak terlalu tinggi:
+     lebar penuh kolom, tinggi dibatasi, object-fit: cover supaya
+     foto tetap terpotong rapi tanpa gepeng/melar */
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+/* =============================================================
+   FOOTER
+   Styling untuk tag <footer> penutup halaman.
+   ============================================================= */
+footer {
+  padding: 20px;
+  text-align: center;
+  background: #c65605;
+  color: #fff8f0;
+}

@@ -1,0 +1,79 @@
+<!--
+  ============================================================
+  Studi Kasus Perancangan Website Informasi Sederhana
+  pada UMKM Warung Pojok Mba Sofy
+
+  Mata Kuliah : Pemrograman Antarmuka Pengguna
+  Kelompok    : 9 (SI A)
+
+  Disusun oleh:
+  - Deio Castello Sujati       (825250002)
+  - Felicia Rivera             (825250003)
+  - Muhammad Ubait Dhaifullah  (825250012)
+  ============================================================
+-->
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Warung Pojok Mba Sofy - Profil &amp; Menu</title>
+  <!-- CSS eksternal: styling dipisah dari struktur HTML -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER: tag untuk judul/identitas halaman -->
+  <header>
+    <h1>Warung Pojok Mba Sofy</h1>
+    <p>Nasi Goreng &middot; Nasi Katsu &middot; Roti Bakar &middot; Minuman Segar</p>
+  </header>
+
+  <!-- NAV: tag navigasi, isi anchor link (#id) menuju tiap section -->
+  <nav>
+    <a href="#profil">Profil</a>
+    <a href="#menu">Menu &amp; Harga</a>
+    <a href="#galeri">Kategori</a>
+    <a href="#kontak">Kontak</a>
+  </nav>
+
+  <!--
+    LAYOUT MULTI-KOLOM:
+    <main class="container"> jadi wadah grid dengan
+    grid-template-columns: 2fr 1fr, sehingga <article> (2fr)
+    dan <aside> (1fr) sejajar berdampingan.
+  -->
+  <main class="container" id="profil">
+
+    <!-- ARTICLE: kolom konten utama (2fr) -->
+    <article>
+      <h2>Profil Usaha</h2>
+      <!-- Gambar usaha: <img> dengan atribut alt wajib untuk aksesibilitas -->
+      <img src="image/fotodepan.jpeg" alt="Tampak depan Warung Pojok Mba Sofy">
+      <p>Warung Pojok Mba Sofy adalah usaha kuliner rumahan yang melayani
+        menu masakan sehari-hari dengan cita rasa rumahan. Berdiri sebagai
+        warung pojok yang ramai dikunjungi pelanggan sekitar, kami menyediakan
+        aneka nasi goreng, mie/kwetiau goreng, katsu, roti bakar, hingga
+        minuman dingin dan hangat.</p>
+
+      <h3>Keunggulan</h3>
+      <!-- List tidak berurutan <ul>/<li> untuk poin keunggulan -->
+      <ul>
+        <li>Menu bervariasi, mulai dari Rp 6.000</li>
+        <li>Porsi "komplit" dan "special" untuk yang lebih lapar</li>
+        <li>Semua dimasak fresh setelah pesan</li>
+        <li>Tempat bersih dan nyaman untuk makan di tempat</li>
+      </ul>
+    </article>
+
+  </main>
+
+  <!-- FOOTER: tag penutup halaman -->
+  <footer id="kontak">
+    <p>Ayo datang ke Warung Pojok Mba Sofy!</p>
+    <p>&copy; 2026 Warung Pojok Mba Sofy - Kelompok 9</p>
+  </footer>
+
+</body>
+</html>
