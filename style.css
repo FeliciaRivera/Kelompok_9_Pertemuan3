@@ -207,6 +207,136 @@ article img {
 }
 
 /* =============================================================
+   FORM KONTAK 
+   Styling untuk <form>, <label>, <input>, <select>, <textarea>,
+   dan <button> pada kotak "Hubungi Kami" di aside.
+   ============================================================= */
+.kontak-box {
+  margin-top: 20px;
+  background: #ffffff;
+  border: 1px solid #f2b475;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.kontak-box h3 {
+  margin-top: 0;
+}
+
+/* Flex column supaya tiap label & kontrol form tersusun ke bawah */
+.kontak-box form {
+  display: flex;
+  flex-direction: column;
+}
+
+.kontak-box label {
+  font-weight: bold;
+  color: #ca762b;
+  margin-bottom: 4px;
+  margin-top: 10px;
+}
+
+/* Styling untuk semua kontrol input teks, dropdown, dan textarea */
+.kontak-box input,
+.kontak-box select,
+.kontak-box textarea {
+  padding: 8px;
+  border: 1px solid #df8e48;
+  border-radius: 6px;
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  color: #3a2210;
+}
+
+.kontak-box textarea {
+  resize: vertical;
+}
+
+.kontak-box button {
+  margin-top: 14px;
+  padding: 10px;
+  background: #c65605;
+  color: #fff8f0;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.kontak-box button:hover {
+  background: #ca762b;
+}
+
+/* =============================================================
+   TABEL KATALOG MENU
+   Tabel ini berada di dalam <article> (kolom 2fr). Styling
+   mengikuti materi: border-collapse, padding & text-align pada
+   th/td, warna berbeda untuk baris judul (colspan) dan header
+   kolom, sel kategori (rowspan), zebra-striping nth-child(even),
+   dan efek hover pada baris.
+   ============================================================= */
+#menu {
+  margin-top: 30px;
+}
+
+#menu h2 {
+  color: #c65605;
+  margin-top: 0;
+}
+
+/* border-collapse: collapse menyatukan garis antar sel supaya
+   tidak ada garis ganda/double border */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #df8e48;
+  padding: 10px;
+  text-align: left;
+}
+
+/* Baris pertama thead = judul tabel yang digabung dengan colspan="3" */
+thead tr:first-child th {
+  background: #c65605;
+  color: #fff8f0;
+  text-align: center;
+}
+
+/* Baris kedua thead = header kolom (Kategori, Nama Menu, Harga) */
+thead tr:nth-child(2) th {
+  background: #ca762b;
+  color: #fff8f0;
+}
+
+/* Sel kategori yang memakai rowspan diberi class terpisah supaya
+   warnanya konsisten, tidak tercampur dengan sel Nama Menu */
+tbody td.kategori {
+  font-weight: bold;
+  color: #ca762b;
+  background: #f4c47a;
+  vertical-align: middle;
+}
+
+/* Zebra-striping: baris genap diberi warna latar berbeda agar mudah dibaca */
+tbody tr:nth-child(even) {
+  background: #fff3e2;
+}
+
+/* Efek hover: baris yang disentuh kursor berubah warna */
+tbody tr:hover {
+  background: #f2b475;
+}
+
+.table-note {
+  font-size: 0.85rem;
+  color: #ca762b;
+  text-align: right;
+}
+
+/* =============================================================
    FOOTER
    Styling untuk tag <footer> penutup halaman.
    ============================================================= */
@@ -215,4 +345,16 @@ footer {
   text-align: center;
   background: #c65605;
   color: #fff8f0;
+}
+
+/* =============================================================
+   RESPONSIVE DESIGN
+   Di layar sempit (<=800px), grid 2 kolom (article + aside)
+   diubah jadi 1 kolom supaya tetap nyaman dibaca di HP. Berfungsi
+   untuk menyesuaikan layout halaman agar tetap rapi dan mudah dibaca di layar kecil.
+   ============================================================= */
+@media (max-width: 800px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
 }

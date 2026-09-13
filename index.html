@@ -65,6 +65,106 @@
         <li>Semua dimasak fresh setelah pesan</li>
         <li>Tempat bersih dan nyaman untuk makan di tempat</li>
       </ul>
+
+      <!--
+        TABEL KATALOG MENU:
+        - <thead>/<tbody> memisahkan judul dan isi tabel
+        - colspan="3" pada baris pertama <thead> menggabungkan
+          3 kolom jadi satu judul tabel
+        - rowspan pada <td class="kategori"> menggabungkan
+          beberapa baris yang punya kategori menu sama,
+          supaya nama kategori tidak diulang tiap baris
+      -->
+      <div id="menu">
+        <h2>Katalog Menu &amp; Daftar Harga</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th colspan="3">Katalog Menu Warung Pojok Mba Sofy</th>
+            </tr>
+            <tr>
+              <th>Kategori</th>
+              <th>Nama Menu</th>
+              <th>Harga</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Kelompok baris "Nasi Goreng": rowspan=4 karena ada 4 varian -->
+            <tr>
+              <td rowspan="4" class="kategori">Nasi Goreng</td>
+              <td>Nasi Goreng Biasa</td>
+              <td>Rp 20.000</td>
+            </tr>
+            <tr><td>Nasi Goreng Komplit</td><td>Rp 24.000</td></tr>
+            <tr><td>Nasi Goreng Komplit Special</td><td>Rp 29.000</td></tr>
+            <tr><td>Nasi Goreng Seafood</td><td>Rp 29.000</td></tr>
+
+            <!-- Kelompok baris "Kwetiau Goreng": rowspan=3 -->
+            <tr>
+              <td rowspan="3" class="kategori">Kwetiau Goreng</td>
+              <td>Kwetiau Goreng Biasa</td>
+              <td>Rp 20.000</td>
+            </tr>
+            <tr><td>Kwetiau Goreng Komplit</td><td>Rp 24.000</td></tr>
+            <tr><td>Kwetiau Goreng Komplit Special</td><td>Rp 29.000</td></tr>
+
+            <!-- Kelompok baris "Mie Goreng Tek Tek": rowspan=3 -->
+            <tr>
+              <td rowspan="3" class="kategori">Mie Goreng Tek Tek</td>
+              <td>Mie Goreng Tek Tek Biasa</td>
+              <td>Rp 20.000</td>
+            </tr>
+            <tr><td>Mie Goreng Tek Tek Komplit</td><td>Rp 24.000</td></tr>
+            <tr><td>Mie Goreng Tek Tek Komplit Special</td><td>Rp 29.000</td></tr>
+
+            <!-- Kelompok baris "Nasi Katsu": rowspan=3 -->
+            <tr>
+              <td rowspan="3" class="kategori">Nasi Katsu</td>
+              <td>Nasi Katsu</td>
+              <td>Rp 20.000</td>
+            </tr>
+            <tr><td>Nasi Katsu Geprek</td><td>Rp 22.000</td></tr>
+            <tr><td>Nasi Katsu + Telor</td><td>Rp 24.000</td></tr>
+
+            <!-- Kelompok baris "Katsu Mix Indomie": rowspan=4 -->
+            <tr>
+              <td rowspan="4" class="kategori">Katsu Mix Indomie</td>
+              <td>Katsu Mix Indomie</td>
+              <td>Rp 23.000</td>
+            </tr>
+            <tr><td>Katsu Mix Indomie + Telor</td><td>Rp 27.000</td></tr>
+            <tr><td>Katsu Mix Indomie Double</td><td>Rp 28.000</td></tr>
+            <tr><td>Katsu Mix Indomie Double + Telor</td><td>Rp 32.000</td></tr>
+
+            <!-- Kelompok baris "Roti Bakar": rowspan=2 -->
+            <tr>
+              <td rowspan="2" class="kategori">Roti Bakar</td>
+              <td>Roti Bakar Aneka Rasa</td>
+              <td>Rp 13.000</td>
+            </tr>
+            <tr><td>Roti Bakar Mix Keju</td><td>Rp 15.000</td></tr>
+
+            <!-- Kelompok baris "Minuman Dingin": rowspan=4 -->
+            <tr>
+              <td rowspan="4" class="kategori">Minuman Dingin</td>
+              <td>Nutrisari</td>
+              <td>Rp 7.000</td>
+            </tr>
+            <tr><td>Ovaltine</td><td>Rp 10.000</td></tr>
+            <tr><td>Good Day</td><td>Rp 10.000</td></tr>
+            <tr><td>Aneka Pop Ice</td><td>Rp 10.000</td></tr>
+
+            <!-- Kelompok baris "Minuman Hangat": rowspan=2 -->
+            <tr>
+              <td rowspan="2" class="kategori">Minuman Hangat</td>
+              <td>Aneka Kopi Panas</td>
+              <td>Rp 6.000</td>
+            </tr>
+            <tr><td>Ovaltine Hangat</td><td>Rp 6.000</td></tr>
+          </tbody>
+        </table>
+      </div>
     </article>
 
     <!-- ASIDE: kolom sidebar (1fr), berisi info pendukung -->
@@ -128,6 +228,38 @@
           loading="lazy">
         </iframe>
       </div>
+
+      <!--
+        FORM KONTAK            : elemen form dan kontrolnya
+        - <input type="text">  : kolom isian satu baris (Nama, Email/No. HP)
+        - <select>/<option>    : dropdown pilihan (Perihal)
+        - <textarea>           : kolom isian multi-baris (Pesan)
+        - <button type="submit">: tombol untuk mengirim form
+        - required              : atribut wajib diisi sebelum submit
+        action="#" hanya placeholder karena tugas ini belum terhubung ke server/PHP, sehingga form tidak akan mengirim data kemana-mana.
+      -->
+      <div class="kontak-box">
+        <h3>Hubungi Kami</h3>
+        <form action="#" method="post">
+          <label for="nama">Nama</label>
+          <input type="text" id="nama" name="nama" placeholder="Nama kamu" required>
+
+          <label for="kontak">Email / No. HP</label>
+          <input type="text" id="kontak" name="kontak" placeholder="email@contoh.com" required>
+
+          <label for="perihal">Perihal</label>
+          <select id="perihal" name="perihal">
+            <option value="pertanyaan">Pertanyaan</option>
+            <option value="pemesanan">Pemesanan</option>
+            <option value="saran">Saran &amp; Kritik</option>
+          </select>
+
+          <label for="pesan">Pesan</label>
+          <textarea id="pesan" name="pesan" rows="4" placeholder="Tulis pesan kamu di sini..."></textarea>
+
+          <button type="submit">Kirim Pesan</button>
+        </form>
+      </div>
     </aside>
 
   </main>
@@ -135,7 +267,7 @@
   <!-- FOOTER: tag penutup halaman -->
   <footer id="kontak">
     <p>Ayo datang ke Warung Pojok Mba Sofy!</p>
-    <p>&copy; 2026 Warung Pojok Mba Sofy - Kelompok 9</p>
+    <p>&copy; 2026 Warung Pojok Mba Sofy - Kelompok 9 </p>
   </footer>
 
 </body>
